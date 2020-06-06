@@ -14,6 +14,10 @@ function setup() {
 }
 
 function search(event) {
+    let query = input.value
+    let matched = cities.filter(function(city) {
+        return city.city.includes(query)
+    })
     
 }
 
