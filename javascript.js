@@ -18,7 +18,14 @@ function search(event) {
     let matched = cities.filter(function(city) {
         return city.city.includes(query)
     })
-    
+    // Clear the restults
+    results.innerHTML = ""
+    // Add all the new results
+    for (let city of matched) {
+        let listItem = document.createElement("li")
+        listItem.innerText = city.city
+        results.appendChild(listItem)
+    }
 }
 
 window.addEventListener("load", setup)
